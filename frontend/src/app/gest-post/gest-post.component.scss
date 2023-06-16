@@ -1,0 +1,49 @@
+table{margin-left:350px;
+    // margin-top:100px;
+    text-align: center;
+    width:25cm;}
+    th,td{border:solid 1px #bebebe;}
+    .btnEdit{
+        border-color: transparent;
+        border-radius: 5px;
+        height: 28px;
+        width:100px;
+        background-color: #0dcaf0;
+        align-items:center;}
+        .btnEditdisabled{
+            border-color: transparent;
+            border-radius: 5px;
+            height: 28px;
+            width:100px;
+            background-color: #bebebe;
+            align-items:center;}
+    .btnAdd{
+        position: absolute;
+        margin-left:31.3cm;
+        margin-top:-0.7cm;
+        border-color: transparent;
+        border-radius: 5px;
+        height: 30px;
+        width:100px;
+        background-color: #0dcaf0;
+    }
+    .btnAddDisabled{ position: absolute;
+        margin-left:31.2cm;
+        margin-top:1.5cm;
+        border-color: transparent;
+        border-radius: 5px;
+        height: 30px;
+        width:100px;
+        background-color: #afafaf;}
+    .toggle{position: absolute;}
+    .btnAdd:hover{background-color: #0cb6d9 ;}
+    .btnAdd:active{background-color: #0a9cb9;}
+    .btnAffec{
+        border-color: transparent;
+        border-radius: 5px;
+        height: 28px;
+        width:145px;
+        background-color: #0dcaf0;
+        align-items:center;}
+        .toggle:checked {background-color: #58af5c;}
+        .toggle:not(:checked) {background-color: #e7403d;}

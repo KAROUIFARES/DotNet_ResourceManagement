@@ -1,0 +1,53 @@
+table{margin-left:150px;
+    margin-top:10px;
+    text-align: center;
+    width:25cm;
+}
+
+th,td{border:solid 1px #bebebe;}
+.tdEdit{width: 30px;}
+.tdEditPo{width: 60px;}
+th{width:3cm;}
+    .btnEdit{
+        border:black solid;
+        color:black;
+        border-radius: 5px;
+        width: 100px;
+        height: 25px;
+        text-decoration: none;}
+    .btnAdd{
+        position: absolute;
+        margin-left:28.9cm;
+        margin-top:-0.7cm;
+        border-color: transparent;
+        border-radius: 5px;
+        height: 30px;
+        width:150px;
+        background-color: #0dcaf0;
+    }
+    .btnAddDisabled,.btnAddDisabled:hover{position: absolute;
+        margin-left:29.2cm;
+        margin-top:1.5cm;
+        border-color: transparent;
+        border-radius: 5px;
+        height: 30px;
+        width:150px;
+        background-color: #afafaf;}
+    .btnAdd:hover{background-color: #0cb6d9 ;}
+    .btnAdd:active{background-color: #0a9cb9;}
+.link{ color:#ee8a9e;
+    text-decoration: underline;
+    background-color: transparent;
+    border:none;
+}
+.linkdesabled{color:#afafaf;
+    text-decoration: underline;
+    background-color: transparent;
+    border:none;}
+.link:hover{color:#e34363;}
+.link:active{color:#e02b50;}
+.btn:hover{background-color: #0cb6d9 ;}
+.btn:active{background-color: #0a9cb9;}
+.toggle{position:absolute;}
+.toggle:checked {background-color: #58af5c;}
+.toggle:not(:checked) {background-color: #e7403d;}

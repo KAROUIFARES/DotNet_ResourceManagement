@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+<div class="container boxgrp">
+    <div class="row box1">
+
+        <a class=" me-5"  [ngClass]="{'boxx':role!=='SuperAdmin','box':role==='SuperAdmin'}" routerLink="/GestUser" >
+            <i class="fa fa-user-circle-o iconn"  [ngClass]="{'icon1disabled':role!=='SuperAdmin','icon1':role==='SuperAdmin'}"></i><br>
+            <span  [ngClass]="{'itemmdisabled':role!=='SuperAdmin','itemm':role==='SuperAdmin'}">User Management</span>
+            <hr>
+            <div class="btn">
+                <span  [ngClass]="{'linkss':role!=='SuperAdmin','links':role==='SuperAdmin'}" routerLink="/GestUser"routerLink="/AddUser">
+                <i class="fa fa-user-plus"></i>Add User</span>
+            </div>
+        </a>
+
+        <a class="me-5 box" routerLink="/GestUser" routerLink="/GestPost">
+            <i class="fa fa-briefcase iconn icon2"></i><br>
+            <span class="itemm">Post Management</span>
+            <hr>
+            <!-- *********************** -->
+            <div class="btn" *ngIf="role=='AdminSysteme'">
+                <span  routerLink="/AddPost" class="links"><i class="fa fa-plus-circle"></i>Affect Equip</span>
+            </div>
+            <div class="btn" *ngIf="role!='AdminSysteme'">
+                <span  routerLink="/AddPost"  class="links"><i class="fa fa-plus-circle"></i>Add Post</span>
+            </div>
+            <!-- *********************** -->
+        </a>
+
+        <a class="me-5 box" routerLink="/GestRessource">
+            <i class="fa fa-users iconn icon3"></i><br>
+            <span class="itemm">Ressource Management</span>
+            <hr>
+            <!-- ************************ -->
+            <div class="btn"  *ngIf="role!='AdminSysteme'">
+                <span class="links" routerLink="/AddRess" aria-disabled><i class="fa fa-plus-circle"></i>Add Ressource</span>
+            </div>
+            <div class="btn" *ngIf="role=='AdminSysteme'">
+                <span  class="links" routerLink="/AddRess" aria-disabled><i class="fa fa-file"></i>consultation</span>
+            </div>
+            <!-- ************************ -->
+        </a>
+    </div>
+
+    <div class="row box1" >
+        <a class="box me-5" [ngClass]="{'boxx':role!=='SuperAdmin','box':role==='SuperAdmin'}" routerLink="/GestPreRequis">
+            <i class="fa fa-tasks iconn icon4" [ngClass]="{'icon4disabled   disabled':role!=='SuperAdmin','icon4':role==='SuperAdmin'}"></i><br>
+            <span class="itemm" [ngClass]="{'itemmdisabled':role!=='SuperAdmin','itemm':role==='SuperAdmin'}">Requirment Management</span>
+            <hr>
+            <div class="btn">
+                <span [ngClass]="{'linkss':role!=='SuperAdmin','links':role==='SuperAdmin'}" routerLink="/addPre"><i class="fa fa-plus-circle"></i>Add Requirment</span>
+            </div>
+        </a>
+        <a class="box me-5" routerLink="/UserProfile">
+            <i class="fa fa-address-book iconn icon5"></i><br>
+            <span class="itemm">User Profile</span>
+            <hr>
+            <div class="btn">
+                <span class="links" routerLink="/Profile"><i class="fa fa-cogs"></i>Edit Information</span>
+            </div>
+        </a>
+        <a class="box me-5" routerLink="/static">
+            <i class="fa fa-line-chart iconn icon6"></i><br>
+            <span class="itemm">Statics</span>
+            <hr>
+            <div class="btn">
+                <span class="links" routerLink="/static"><i class="fa fa-cogs"></i>Edit Graph</span>
+            </div>
+        </a>
+        
+    </div>
+
+</div>

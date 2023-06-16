@@ -1,0 +1,52 @@
+table{margin-left:350px;
+    margin-top:10px;
+    text-align: center;
+    width:20cm;}
+    th,td{border:solid 1px #bebebe;}
+.btnEdit{
+    border-color: transparent;
+    border-radius: 5px;
+    height: 28px;
+    width:100px;
+    background-color: #0dcaf0;
+    align-items:center;}
+.btnAdd{
+    position: absolute;
+    margin-left:24.9cm;
+    margin-top:-0.7cm;
+    border-color: transparent;
+    border-radius: 5px;
+    height: 30px;
+    width:150px;
+    background-color: #0dcaf0;
+    align-items:center;
+    }
+.btn1{
+    position: absolute;
+    margin-left:20cm;
+    margin-top:-0.7cm;
+    border-color: transparent;
+    border-radius: 5px;
+    height: 30px;
+    width:150px;
+    background-color: #0dcaf0;
+    align-items:center;
+}
+.btn2{
+    position: absolute;
+    margin-left:15cm;
+    margin-top:-0.7cm;
+    border-color: transparent;
+    border-radius: 5px;
+    height: 30px;
+    width:150px;
+    background-color: #0dcaf0;
+    align-items:center;
+    }
+.toggle{position: absolute;    
+    }
+.btnAdd:hover,.btn1:hover,.btn2:hover{background-color: #0cb6d9 ;}
+.btnAdd:active,.btn1:hover,.btn2:hover{background-color: #0a9cb9;}
+.toggle:checked {background-color: #58af5c;}
+.toggle:not(:checked) {background-color: #e7403d;}
+  

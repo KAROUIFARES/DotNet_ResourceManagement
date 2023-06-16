@@ -1,0 +1,31 @@
+.form{ border-radius: 10px;
+    padding:20px;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.1);
+    margin-top:10px;
+    }
+h4{text-align: center;}
+.btn1{
+    position: absolute;
+    margin-left:23.8cm;
+    margin-top:-0.7cm;
+    border-color: transparent;
+    border-radius: 5px;
+    height: 30px;
+    width:120px;
+    background-color: #0dcaf0;
+    align-items:center;
+}
+.btn2{
+    position: absolute;
+    margin-left:20.3cm;
+    margin-top:-0.7cm;
+    border-color: transparent;
+    border-radius: 5px;
+    height: 30px;
+    width:120px;
+    background-color: #0dcaf0;
+    align-items:center;
+    }
+    .btn1:hover,.btn2:hover{background-color: #0cb6d9 ;}
+    .btn1:hover,.btn2:hover{background-color: #0a9cb9;}

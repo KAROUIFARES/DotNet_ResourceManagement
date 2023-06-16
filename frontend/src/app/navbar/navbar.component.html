@@ -1,0 +1,94 @@
+
+    <div class="col-md-8 xx" style="background-color: #fff  ;">
+      <div class="hornav">
+        <div>
+          <img class="logoo" src="assets\logo1.png">
+          <div class="search">
+            <div class="search-bar">
+              <input type="text" placeholder="Search">
+              <i class="fa fa-search icon rounded-circle"></i>
+            </div>
+          </div>
+        </div>
+       
+        
+      </div>
+      <div class="hornav2">
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/Home'">Home</div>
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/GestPost'">Post Management</div>
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/AffectEquip'"><button routerLink="/GestPost" class="Link">Post Management </button> > Affect Requirment </div>
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/EquipPostLis'"><button routerLink="/GestPost" class="Link">Post Management </button> > Requirment List</div>
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/GestUser'">User Management</div>
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/AddUser'"><button routerLink="/GestUser" class="Link">User Management</button> > Add User</div>
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/GestRessource'">Resource Management</div>
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/UserProfile'">Profile</div>
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/UpdateUser'"><button routerLink="/GestUser" class="Link">User Management</button> > Update User</div>
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/GestPreRequis'">Requirment Management </div>
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/AddRess'"><button routerLink="/GestRessource" class="link">Resource Management </button>> Add Employee</div>
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/EmployeeRecord'"><button routerLink="/GestRessource" class="link">Resource Management </button> > Employee Record</div>
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/EmpPost'"><button routerLink="/GestRessource" class="link">Resource Management</button>> Employee Posts</div>
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/AffectPostEmp'"><button routerLink="/GestRessource" class="link">Employee Management</button>> <button routerLink="/EmpPost" class="link">Employee Posts></button>Affect Post</div>
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/EmpEquip'"><button routerLink="/GestRessource" class="link">Resource Management </button>>Employee Requirment</div>
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/EmpAdress'"><button routerLink="/GestRessource" class="link">Resource Management </button>><button routerLink="/AddRess" class="link">Add Employee</button>>EmpAdress</div>  
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/addPre'"><button routerLink="/GestPreRequis" class="link">Requirment Management</button>>Add Requirment </div>
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/AddPost'"><button routerLink="/GestPost" class="link">Post Management</button>>Add Post </div>
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/updatePost'"><button routerLink="/GestPost" class="link">Post Management</button>>Update Post </div>
+        <div class="navItem" style="color:#afafaf" *ngIf="route.url === '/static'">Statics</div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <nav>
+        <ul>
+          <li><a routerLink="/UserProfile" class="logo">
+            <img src="assets\web-user-icon-20.jpg" class="logo">
+            <span class="nav-item">{{user.firstName}} {{user.lastName}}</span>
+          </a></li>
+  
+          <li [routerLinkActive]="'active'"><a routerLink="/Home">
+            <i class="fa fa-home"></i>
+            <span class="nav-item">Home</span>
+          </a></li>
+  
+          <li [routerLinkActive]="'active'" class="lidisabled"><a routerLink="/UserProfile">
+            <i class="fa fa-address-book"></i>
+            <span class="nav-item">Profile</span>
+          </a></li>
+         
+          <li [routerLinkActive]="'active'">
+            <a [ngClass]="{'itemdisabled': role !== 'SuperAdmin', 'item': role === 'SuperAdmin'}" routerLink="/GestUser">
+              <i class="fa fa-user-circle-o"></i>
+              <span class="nav-item">Users Management</span>
+            </a>
+          </li>
+          
+          
+          <li [routerLinkActive]="'active'"><a routerLink="/GestPost">
+            <i class="fa fa-briefcase"></i>
+            <span class="nav-item">Posts Management</span>
+          </a></li>
+    
+          <li [routerLinkActive]="'active'"><a routerLink="/GestRessource">
+            <i class="fa fa-users"></i>
+            <span class="nav-item">RessourcesManagement</span>
+          </a></li>
+    
+          <li [routerLinkActive]="'active'">
+            <a [ngClass]="{'itemdisabled': role === 'AdminRH', 'item': role === 'SuperAdmin'}" routerLink="/GestPreRequis" >
+              <i class="fa fa-tasks"></i>
+              <span class="nav-item">Requirment Management</span>
+            </a>
+          </li>
+          <li [routerLinkActive]="'active'">
+            <a [ngClass]="{'itemdisabled': role === 'AdminSystem', 'item': role === 'AdminRH'}"  routerLink="/static">
+              <i class="fa fa-line-chart"></i>
+              <span class="nav-item">Statistics</span>
+            </a>
+          </li>
+          
+          <li [routerLinkActive]="'active'"><a class="logout" (click)="logout()">
+            <i class="fa fa-sign-out"></i>
+            <span class="nav-item">Log out</span>
+          </a></li>
+        </ul>
+      </nav>
+      </div>

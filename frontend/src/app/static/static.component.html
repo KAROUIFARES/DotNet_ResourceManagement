@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <app-navbar></app-navbar>
+     <div class="graph">
+      <div>
+        <form class="col-md-6" [formGroup]="staticForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="year1"  formControlName="annee1" [(ngModel)]="static.anne1">
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="year2"  formControlName="annee2" [(ngModel)]="static.anne2">
+            </div> 
+            <div class="col">
+              <button type="submit" class="btn btn-info">submit</button>
+            </div>
+          </div>
+         
+          
+        </form>
+      </div>
+      <ngx-charts-bar-vertical *ngIf="affiche==true"
+        [view]="view"
+        
+        [results]="single"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        (select)="onSelect($event)">
+      </ngx-charts-bar-vertical>
+  </div> 
+</body>
+</html>

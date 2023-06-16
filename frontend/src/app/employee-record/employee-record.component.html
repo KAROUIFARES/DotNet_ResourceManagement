@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <app-navbar></app-navbar>
+    <div class=" col-md-4 mx-auto record">
+        <div>
+            <h4 style="text-align: center;">******EMPLOYEE INFORMATION******</h4>
+            <div class="EmpData">
+                <table class="table">
+                    <tr><td><b>FirstName:</b></td><td>{{Employee.firstname}}</td></tr>
+                    <tr><td><b>LastName:</b></td><td>{{Employee.lastname}}</td></tr>
+                    <tr><td><b>E-mail:</b></td><td>{{Employee.mail}}</td></tr>
+                    <tr><td><b>Phone:</b></td><td>{{Employee.phone}}</td></tr>
+                    <tr><td><b>Adresse:</b></td><td>{{adress.streetAdress}}  , {{adress.city}} , {{adress.province}} , {{adress.codePostal}}</td></tr>
+                    <tr><td><b>NumComptBanc:</b></td><td>{{Employee.numComptBanc}}</td></tr>
+                    <tr><td><b>Lanch Date:</b></td><td>{{Employee.launchDate}}</td></tr>
+                    <tr><td><b>Occupation Date:</b></td><td>{{Employee.dateOccupation}}</td></tr>
+                    </table></div></div>
+        <div>
+            <h4 style="text-align: center;">****************POST****************</h4>
+            <div class="EmpPost">
+                
+                    <table class="table" style="text-align: center;">
+                        <th>Post</th>
+                        <th>Hirarchi level:</th>
+                        <tr *ngFor="let post of Post">
+                            <td>{{post.title}}</td>
+                            <td>{{post.hieraLevel}}</td>
+                        </tr>
+                    </table>
+                
+               
+            </div>
+        </div>
+        <div>
+            <h4 style="text-align: center;">***********EQUIPMENT***********</h4>
+            <div class="EmpPost" >
+                <table class="table" style="text-align: center;">
+                    <th>Hardware</th>
+                    <th>software</th>
+                    <tr>
+                        <td *ngFor="let equip of equipList">{{equip.nom}}</td>
+                        <td *ngFor="let software of software">{{software.nom}}</td>
+                    </tr>
+                </table>
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

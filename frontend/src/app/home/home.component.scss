@@ -1,0 +1,99 @@
+
+*{
+        margin:0;
+        padding:0;
+        outline:none;
+        border:none;
+        text-decoration: none;
+        box-sizing: border-box;
+}
+
+
+
+a{
+        position: relative;
+        color:rgba(85,83,83);
+        font-size:14px;
+        display:table;
+        width:300px;
+        padding:10px;
+}
+
+
+a:hover{
+        background:#eee;
+}
+
+
+.box{
+        border-radius: 15px;
+        position: relative;
+        width:300px;
+        height: 120px;
+        background-color:#fff;
+        margin-top:70px;
+        box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.1);
+}
+.boxx,.boxx:hover{
+        border-radius: 15px;
+        position: relative;
+        width:300px;
+        height: 120px;
+        background-color:#ebebeb;
+        margin-top:70px;
+        box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.1);
+}
+.box:hover{
+        background-color: #eeeeee;
+}
+.boxgrp{margin-left: 290px;}
+
+.boxicon{
+        background-color: lightgrey;
+        width: 70px;
+        height: 70px;
+        color:black;
+        padding-left: 2px;
+        font-size:30px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-bottom:20px;
+}
+
+.iconn{
+        position: absolute;
+        padding:15px;
+        border-radius:5px;
+        width:80px;
+        height: 80px;
+        font-size:50px;
+        color:white;
+        margin-top:-30px;
+        margin-left:30px;
+        box-shadow:  0px 5px 6px rgba(0,0,0,0.1);
+}
+.icon1{background-color: #fd9917;}
+.icon1disabled{background-color: #d1b38c;}
+.icon2{background-color: #58af5c;}
+.icon3{background-color: #e7403d;}
+.icon4{background-color: #00bcd4;}
+.icon4Disabled{background-color: #83b2b8;}
+.icon5{background-color: #9368e9;}
+.icon6{background-color: #148c9c;} 
+.itemm{padding-left:120px;}
+.itemmdisabled{padding-left:120px;color:lightgrey;}
+hr{
+        border:solid 1px;
+        margin-top:1cm;
+}
+.links{display:inline;
+        margin-left:10px;
+        color:#ee8a9e;
+}
+.linkss{display:inline;
+        margin-left:10px;
+        color:#f6bfca;
+}
+.links:hover{color:#e34363;}
+.links:active{color:#e02b50;}
+ 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <form [formGroup]="registeForm" (ngsubmit)="Login()">
+    <div class="container col-md-6 row box">
+      <div>
+        <h2 class="mb-5">Sign-In</h2>
+        <img src="assets\logo1.png" >
+        <div class="champInput mt-5">
+          <div class="form-floating col-md-11 mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="login" [(ngModel)]="formdata.login">
+            <label for="floatingInput">Login</label>
+            <div class="form-text text-danger" *ngIf="login.errors?.['required']&&(login.touched||login.dirty)">Login is Required</div>
+          </div>
+
+          <div class="form-floating col-md-11">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="pwd" [(ngModel)]="formdata.pwd">
+            <label for="floatingPassword">Password</label>
+            <div class="form-text text-danger" *ngIf="pwd.errors?.['required']&&(pwd.touched||pwd.dirty)">Password is Required</div>
+          </div>
+          <p class="frpwd"><a href="">Forget password?</a></p>
+        </div>
+        <button class="mt-5" on-click="Login()">Login</button>
+      </div>
+    </div>
+  </form>
+</body>
+</html>

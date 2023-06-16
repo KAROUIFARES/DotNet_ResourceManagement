@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <app-navbar></app-navbar>
+  <div class="btn" *ngIf="role=='AdminSysteme'" >
+    <button type="button" class="btnAddDisabled" disabled>
+      <i class="fa fa-plus-circle"></i>Add Post
+  </button>
+</div>
+  <div class="btn" *ngIf="role!='AdminSysteme'" >
+    <button type="button" class="btnAdd" routerLink="/AddPost" >
+      <i class="fa fa-plus-circle"></i>Add Post
+  </button>
+</div>
+  <table class="table table-striped table-hover">
+    
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">hierarchy level</th>
+        <th scope="col">State</th>
+        <th scope="col" colspan="3">edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of allData">
+        <td>{{post.title}}</td>
+        <td>{{post.hieraLevel}}</td>
+        <td>
+          <div class="form-check form-switch" *ngIf="post.state==true">
+            <input class="form-check-input toggle" type="checkbox" role="switch" id="flexSwitchCheckDefault" (click)="UpdateState(post.id,false)" checked/>
+          </div>
+          <div class="form-check form-switch" *ngIf="post.state==false">
+            <input class="form-check-input toggle" type="checkbox" role="switch" id="flexSwitchCheckDefault" (click)="UpdateState(post.id,true)" />
+          </div>
+        </td>
+        <td *ngIf="role=='AdminSysteme'" >
+          <button type="button" class="btnEditdisabled" data-bs-toggle="modal" data-bs-target="#UpdateModal" disabled>
+            Update
+          </button>
+        </td>
+        <td *ngIf="role!='AdminSysteme'" >
+          <button type="button" class="btnEdit" routerLink="/updatePost" (click)="navigate(post.id)">
+            Update
+          </button>
+        </td>
+        <td>
+          <button type="button" class="btnAffec"  routerLink="/AffectEquip" (click)="navigate(post.id)">Affecte PreRequis</button>
+        </td>
+        <td>
+          <button type="button" class="btnAffec"  routerLink="/EquipPostLis" (click)="navigate(post.id)">EquipListe</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

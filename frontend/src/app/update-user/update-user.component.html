@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <app-navbar></app-navbar>
+  <div class=" form col-md-4 mx-auto">
+        <div class="panel-heading">
+          <h4 class="mb-3 pt-2 ms-3 font-weight-bold">UpdateUser</h4>
+        </div>
+        <form [formGroup]="UpdateForm" (ngSubmit)="Update()">
+          <div class="form-group">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingFirst" placeholder="name@example.com"  formControlName="firstname"  [(ngModel)]=" user.firstName">
+              <label for="floatingInput">FirstName</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingLast" placeholder="LastName"  formControlName="lastname"  [(ngModel)]=" user.lastName">
+              <label for="floatingPassword">LastName</label>
+            </div>
+  
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingLogin" placeholder="name@example.com" [value]="user.login" >
+              <label for="floatingInput">Login</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password"  formControlName="pwd"  [(ngModel)]=" user.pwd">
+              <label for="floatingPassword">Password</label>
+            </div>
+  
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingConfPAss" placeholder="name@example.com" formControlName="rpwd">
+              <label for="floatingInput">ConfirmPassword</label>
+            </div>
+  
+            <button class="btn btn-info form-control" [disabled]="UpdateForm.invalid">Save</button>
+          </div>
+        </form>
+        
+      </div>
+</body>
+</html>

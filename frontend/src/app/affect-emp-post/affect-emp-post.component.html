@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <app-navbar></app-navbar>
+  <div class="col-md-4 mx-auto">
+
+  
+  <div class=" form mb-3">
+            <div class="panel-heading">
+              <h4 class="mb-3 pt-2 ms-3 font-weight-bold">Affect Post</h4>
+            </div>
+            
+              <div class="form-group">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingFirst" placeholder="name@example.com"  [value]="Employee.firstname"  disabled readonly>
+                  <label for="floatingInput">FirstName</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingLast" placeholder="LastName"  [value]="Employee.lastname"  disabled readonly>
+                  <label for="floatingPassword">LastName</label>
+                </div>
+      
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingLogin" placeholder="name@example.com" [value]="Employee.mail"  disabled readonly>
+                  <label for="floatingInput">Login</label>
+                </div>
+                <form [formGroup]="AffectPostForm">
+                  <select class="form-select mb-3"  formControlName="PostId" [(ngModel)]='Affectpost.PostId'>
+                    <option disabled [value]="null" [selected]="true">choose post</option>
+                    <ng-container *ngFor="let Post of post">
+                    <option  *ngIf="Post.state==true" [ngValue]="Post.id">{{Post.title}}</option>
+                  </ng-container>
+                  </select>
+                </form>
+                <div class="btn btn-info form-control" (click)="AffectePost()">AffectPost</div>
+              </div>
+          </div>
+        </div>
+</body>
+</html>

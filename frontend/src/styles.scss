@@ -1,0 +1,18 @@
+body{
+    width: 100%;
+    background:#F8F8FF;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.active{background-color:#4148a0;
+color:white;
+box-shadow:0px 20px 35px rgba(0,0,0,0.1)
+}
+.active .fa,.active .nav-item{color:white;}
+
+@import 'ngx-toastr/toastr';
+
+
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <app-navbar></app-navbar>
+  <div class="col-md-4 mx-auto">
+
+  
+  <div class=" form  mb-3">
+        <div class="panel-heading">
+          <h4 class="mb-3 pt-2 ms-3 font-weight-bold">Add Employee</h4>
+        </div>
+        <div class="form-group">
+          <form [formGroup]="registeForm"  (ngSubmit)="ajouterEmployee()">
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"   formControlName="firstname"  [(ngModel)]="formdata.firstname" >
+              <label for="floatingInput">FirstName</label>
+                    <div class="form-text text-danger" *ngIf="firstname.errors?.['required']&& (firstname.touched||firstname.dirty)">FirstName is Required.</div>
+                    <div class="form-text text-danger" *ngIf="firstname.errors?.['minlength']&& (firstname.touched||firstname.dirty)">FirstName is short.</div>
+                    <div class="form-text text-danger" *ngIf="firstname.errors?.['pattern']&& (firstname.touched||firstname.dirty)">FirstName should start with Alphaber.</div>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"   formControlName="lastname" [(ngModel)]="formdata.lastname">
+                    <label for="floatingInput">LastName</label>
+                    <div class="form-text text-danger" *ngIf="lastname.errors?.['required']&& (lastname.touched||lastname.dirty)">LastName is Required.</div>
+                    <div class="form-text text-danger" *ngIf="lastname.errors?.['minlength']&& (lastname.touched||lastname.dirty)">LastName is short.</div>
+                    <div class="form-text text-danger" *ngIf="lastname.errors?.['pattern']&& (lastname.touched||lastname.dirty)">LastName should start with Alphaber.</div>
+                  </div>
+                
+                <div class="form-group">
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"   formControlName="mail" [(ngModel)]="formdata.mail">
+                    <label for="floatingInput">E-mail</label>
+                    <div class="form-text text-danger" *ngIf="mail.errors?.['required']&&(mail.dirty||mail.touched)">mail is Required.</div>
+                    <div class="form-text text-danger" *ngIf="mail.errors?.['email']&&(mail.dirty||mail.touched)">mail is Invalid.</div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"   formControlName="phone" [(ngModel)]="formdata.phone">
+                    <label for="floatingInput">Phone</label>
+                    <div class="form-text text-danger" *ngIf="phone .errors?.['required']&&(phone.dirty||phone.touched)">Password is Required.</div>
+                    <div class="form-text text-danger" *ngIf="phone .errors?.['minlength']||phone.errors?.['maxlength']&&(phone.dirty||phone.touched)">Password should be at least 6 and at max 15 characters long.</div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"   formControlName="numComptBanc" [(ngModel)]="formdata.numComptBanc">
+                    <label for="floatingInput">NumComptBanc</label>
+                    <div class="form-text text-danger" *ngIf="NumComptBanc.errors?.['required']&& (NumComptBanc.touched||NumComptBanc.dirty)">Numero Compte Bancaire is Required.</div>
+                    <div class="form-text text-danger" *ngIf="NumComptBanc.errors?.['minlength']&& (NumComptBanc.touched||NumComptBanc.dirty)">NumComptBanc is short.</div>
+                    <div class="form-text text-danger" *ngIf="NumComptBanc.errors?.['pattern']&& (NumComptBanc.touched||NumComptBanc.dirty)">LastName should start with Alphaber.</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-floating mb-3">
+                    <input type="date" class="form-control" id="floatingInput" placeholder="name@example.com"   formControlName="dateOccupation" [(ngModel)]="formdata.dateOccupation">
+                    <label for="floatingInput">Occupation Date</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="form-floating mb-3">
+                    <input type="date" class="form-control" id="floatingInput" placeholder="name@example.com"   formControlName="datelaunch" [(ngModel)]="formdata.LaunchDate">
+                    <label for="floatingInput">Launch Date</label>
+                  </div>
+                </div>
+                <hr>
+                <button class="btn btn-info  form-control" [disabled]="registeForm.invalid">Add</button>
+          </form>
+          
+</div>
+</div>
+
+  <nav aria-label="..." class="col-md-6 mx-auto">
+  <ul class="pagination">
+    <li class="page-item " >
+      <a class="page-link">Previous</a>
+    </li>
+    <li class="page-item" [routerLinkActive]="'active'">
+      <a class="page-link" routerLink="/AddRess">1</a>
+    </li>
+    <li class="page-item " aria-current="page" [routerLinkActive]="'active'">
+      <a class="page-link" routerLink="/EmpAdress">2</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+</div>
+</body>
+</html>

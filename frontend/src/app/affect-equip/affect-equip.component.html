@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <app-navbar ></app-navbar>
+  <button class="btn1"(click)="form1()" [style.background-color]="(f1==true)? '#0a9cb9':'#0dcaf0'"><i class="fa fa-desktop"></i>hardware</button>
+  <button class="btn2"(click)="form2()" [style.background-color]="(f2==true)? '#0a9cb9':'#0dcaf0'"><i class="fa fa-plus-circle"></i>software</button>
+  <div class=" form col-md-4 mx-auto" *ngIf="f1==true">
+            <div class="panel-heading">
+              <h4 class="mb-3 pt-2 ms-3 font-weight-bold">Affect hardware Requirment </h4>
+            </div>
+              <div class="form-group">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingFirst" placeholder="name@example.com"  [value]="post.title"  disabled readonly>
+                  <label for="floatingInput">Title</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingLast" placeholder="LastName"   [value]="post.hieraLevel" disabled readonly>
+                  <label for="floatingPassword">hieraLevel</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingLast" placeholder="LastName"   disabled readonly value="Hardware">
+                  <label for="floatingPassword">Type</label>
+                </div>
+                <form [formGroup]="AffectEquiForm">
+                  <select class="form-select mb-3"  formControlName="EquiId" [(ngModel)]="affectEquip.EquiId">
+                    <option disabled [value]="null" [selected]="true">Choose Requirment</option>
+                    <ng-container *ngFor="let equip of Equip" >
+                      <option  [value]="equip.id" *ngIf="equip.state==true">{{equip.nom}}</option>
+                    </ng-container>
+                  </select>
+                </form>
+                <div class="btn btn-info form-control" (click)=" AffecteEquip()">AffectPost</div>
+              </div>
+          </div>
+          <!--***************************************-->
+          <div class=" form col-md-4 mx-auto" *ngIf="f2==true">
+            <div class="panel-heading">
+              <h4 class="mb-3 pt-2 ms-3 font-weight-bold">Affect software Requirment</h4>
+            </div>
+            
+              <div class="form-group">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingFirst" placeholder="name@example.com"  [value]="post.title"  disabled readonly>
+                  <label for="floatingInput">Title</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingLast" placeholder="LastName"   [value]="post.hieraLevel" disabled readonly>
+                  <label for="floatingPassword">hieraLevel</label>
+                </div>
+                <form [formGroup]="AffectEquiForm">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingLast" placeholder="LastName"   disabled readonly value="Software">
+                    <label for="floatingPassword">Type</label>
+                  </div>
+                  <select class="form-select mb-3"  formControlName="EquiId" [(ngModel)]="affectEquip.EquiId"  >
+                    <option disabled [value]="null" [selected]="true">choose Requirment</option>
+                    <ng-container *ngFor="let soft of software" >
+                      <option  [value]="soft.id" *ngIf="soft.state==true">{{soft.nom}}</option>
+                    </ng-container>
+                  </select>
+                  
+                </form>
+                <div class="btn btn-info form-control" (click)=" AffecteEquip()">AffectPost</div>
+              </div>
+          </div>
+</body>
+</html>

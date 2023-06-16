@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <app-navbar></app-navbar>
+    <button class="btn1"(click)="form1()" [style.background-color]="(f1==true)? '#0a9cb9':'#0dcaf0'"><i class="fa fa-desktop"></i>hardware</button>
+    <button class="btn2"(click)="form2()" [style.background-color]="(f2==true)? '#0a9cb9':'#0dcaf0'"><i class="fa fa-plus-circle"></i>software</button>
+    <div class=" form col-md-4 mx-auto" *ngIf="f1">
+        <h4 class="mb-5 pt-2 ms-3 font-weight-bold">Hardware Requirement</h4>
+      <div class="form-group">
+        <form [formGroup]="hardwareForm" #form="ngForm" (ngSubmit)="createEquipment()" method="POST">
+              <div class="form-group ">
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"   formControlName="name"  [(ngModel)]="hardware.nom">
+                    <label for="floatingInput">nom</label>
+                    <div class="form-text text-danger" *ngIf="Name.errors?.['required']&& (Name.touched||Name.dirty)">nom is Required.</div>
+                    <div class="form-text text-danger" *ngIf="Name.errors?.['minlength']&& (Name.touched||Name.dirty)">nom is short.</div>
+                    <div class="form-text text-danger" *ngIf="Name.errors?.['pattern']&& (Name.touched||Name.dirty)">nom should start with Alphaber.</div>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"   formControlName="marque" [(ngModel)]="hardware.marque">
+                  <label for="floatingInput">marque</label>
+                  <div class="form-text text-danger" *ngIf="marque.errors?.['required']&& (marque.touched||marque.dirty)">LastName is Required.</div>
+                  <div class="form-text text-danger" *ngIf="marque.errors?.['minlength']&& (marque.touched||marque.dirty)">LastName is short.</div>
+                  <div class="form-text text-danger" *ngIf="marque.errors?.['pattern']&& (marque.touched||marque.dirty)">LastName should start with Alphaber.</div>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"   formControlName="Modele" [(ngModel)]="hardware.Modele">
+                  <label for="floatingInput">Modele</label>
+                  <div class="form-text text-danger" *ngIf="Modele.errors?.['required']&&(Modele.dirty||Modele.touched)">Login is Required.</div>
+                  <div class="form-text text-danger" *ngIf="Modele.errors?.['email']&&(Modele.dirty||Modele.touched)">Login is Invalid.</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="Caract" [(ngModel)]="hardware.Caract">
+                  <label for="floatingInput">Caract</label>
+                  <div class="form-text text-danger" *ngIf="Caract .errors?.['required']&&(Caract.dirty||Caract.touched)">Password is Required.</div>
+                  <div class="form-text text-danger" *ngIf="Caract .errors?.['minlength']||Caract.errors?.['maxlength']&&(Caract.dirty||Caract.touched)">Password should be at least 6 and at max 15 characters long.</div>
+                </div>
+              </div>             
+              <hr>
+              <button type="submit" class="btn btn-info form-control"  >Register</button>
+        </form>
+      </div>
+    </div>
+    <!--***************************************************-->
+    <div class=" form col-md-4 mx-auto" *ngIf="f2">
+      <h4 class="mb-5 pt-2 ms-3 font-weight-bold">Software Requirement</h4>
+    <div class="form-group">
+      <form [formGroup]="softwareForm" #form="ngForm" (ngSubmit)="createSoftware()" method="POST">
+            <div class="form-group ">
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"   formControlName="name"  [(ngModel)]="software.nom">
+                  <label for="floatingInput">nom</label>
+                  <div class="form-text text-danger" *ngIf="name.errors?.['required']&& (name.touched||name.dirty)">nom is Required.</div>
+                  <div class="form-text text-danger" *ngIf="name.errors?.['minlength']&& (name.touched||name.dirty)">nom is short.</div>
+                  <div class="form-text text-danger" *ngIf="name.errors?.['pattern']&& (name.touched||name.dirty)">nom should start with Alphaber.</div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"   formControlName="version"  [(ngModel)]="software.version">
+                <label for="floatingInput">Version</label>
+                <div class="form-text text-danger" *ngIf="version.errors?.['required']&& (version.touched||version.dirty)">version is Required.</div>
+              </div>
+            </div>          
+            <hr>
+            <button type="submit" class="btn btn-info form-control"  >Register</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
