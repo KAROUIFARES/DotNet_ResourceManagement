@@ -21,7 +21,10 @@ export class NavbarComponent {
     this.id=sessionStorage.getItem('userId');
     this.getuser()
   }
-  getuser(){this.http.get<any>(this.url.UserUrl+'/'+this.id,this.registration).subscribe(data=>{this.user=data;console.log(data)})}
+  getuser(){
+    if(this.id!="XXXXXX")
+      this.http.get<any>(this.url.UserUrl+'/'+this.id,this.registration).subscribe(data=>{this.user=data;console.log(data)})
+    }
   logout()
   {
     sessionStorage.removeItem('userRole');

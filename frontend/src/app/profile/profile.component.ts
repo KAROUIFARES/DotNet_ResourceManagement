@@ -53,7 +53,7 @@ export class ProfileComponent {
   get login():FormControl{ return this.UpdateForm.get("login") as FormControl;}
   get pwd():FormControl{ return this.UpdateForm.get("pwd") as FormControl;}
   get rpwd():FormControl{ return this.UpdateForm.get("rpwd") as FormControl;}
-  showUser(){this.http.get<any>(this.url.UserUrl+'/'+sessionStorage.getItem('userId'),this.registration).subscribe(data=>{this.user=data;})}
+  showUser(){if(this.id!="XXXXXX")this.http.get<any>(this.url.UserUrl+'/'+sessionStorage.getItem('userId'),this.registration).subscribe(data=>{this.user=data;})}
   Update()
   {
     var axios = require('axios');

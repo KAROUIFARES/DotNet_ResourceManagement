@@ -38,6 +38,7 @@ import { StaticComponent } from './static/static.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

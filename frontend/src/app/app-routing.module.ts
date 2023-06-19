@@ -25,6 +25,7 @@ import { UpdateEmpComponent } from './update-emp/update-emp.component';
 import { UpdatePostComponent } from './update-post/update-post.component';
 import { UpdatePreComponent } from './update-pre/update-pre.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+
 const routes: Routes = [
   {path:"AddUser",component:AddUserComponent},//,canActivate: [GuardGuard,RoleGuard],data:{expectedRoles:['SuperAdmin']}
   {path:"",component:LoginComponent},
@@ -49,7 +50,8 @@ const routes: Routes = [
   {path:"addPre",component:AddPreComponent,canActivate: [GuardGuard,RoleGuard],data:{expectedRoles:['SuperAdmin','AdminSysteme']}},
   {path:"updatePre",component:UpdatePreComponent,canActivate: [GuardGuard,RoleGuard],data:{expectedRoles:['SuperAdmin','AdminSysteme']}},
   {path:"updateEmp",component:UpdateEmpComponent,canActivate: [GuardGuard,RoleGuard],data:{expectedRoles:['SuperAdmin','AdminRH']}},
-  {path:"static",component:StaticComponent,canActivate: [GuardGuard,RoleGuard],data:{expectedRoles:['SuperAdmin','AdminRH']}}
+  {path:"static",component:StaticComponent,canActivate: [GuardGuard,RoleGuard],data:{expectedRoles:['SuperAdmin','AdminRH']}},
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

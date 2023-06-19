@@ -25,7 +25,6 @@
             <label for="floatingPassword">Password</label>
             <div class="form-text text-danger" *ngIf="pwd.errors?.['required']&&(pwd.touched||pwd.dirty)">Password is Required</div>
           </div>
-          <p class="frpwd"><a href="">Forget password?</a></p>
         </div>
         <button class="mt-5" on-click="Login()">Login</button>
       </div>
