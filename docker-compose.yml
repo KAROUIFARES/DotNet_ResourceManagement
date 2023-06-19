@@ -1,15 +1,22 @@
-version: "3"
+version: "3.9"
 services:
   frontend:
     build:
-      context: ./path/to/angular/app
-      dockerfile: Dockerfile
+      context: C:\Users\fares\MdWeb\frontend
+      dockerfile: Dockerfile-angular
     ports:
-      - 4200:4200
+      - 80:80
 
   backend:
     build:
-      context: ./path/to/dotnet/app
-      dockerfile: Dockerfile
+      context: C:\Users\fares\MdWeb\backend
+      dockerfile: Dockerfile-dotnet
     ports:
       - 5000:5000
+    depends_on:
+      - database
+
+  database:
+    image: mongo
+    ports:
+      - 27017:27017

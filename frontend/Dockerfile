@@ -1,10 +1,11 @@
-# Stage 1 : Builder l'application Angular
-FROM node:latest as node
+# Étape de construction
+FROM node:18 AS build
 WORKDIR /app
-COPY . .
+COPY package.json package-lock.json ./
 RUN npm install
+COPY . .
 RUN npm run build --prod
 
-# Stage 2 : Servir l'application à l'aide de NGINX
-FROM nginx:alpine
-COPY --from=node /app/dist/frontend /usr/share/nginx/html
+# Étape de production
+FROM nginx:latest
+COPY --from=build /app/dist/frontend /usr/share/nginx/html
